@@ -1,0 +1,22 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+/jctools-core/target
+/jctools-benchmarks/target
+/jctools-experimental/target/
+/.project
+jctools-parent.iml
+/jctools-core/jctools-core.iml
+/jctools-benchmarks/jctools-benchmarks.iml
+/jctools-experimental/jctools-experimental.iml
+.idea
+
+
+/.settings
+
+target/MANIFEST.MF
+/settings.xml
+/target/

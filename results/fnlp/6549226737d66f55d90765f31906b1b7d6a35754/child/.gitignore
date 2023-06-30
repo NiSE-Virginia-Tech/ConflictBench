@@ -1,0 +1,16 @@
+# Maven #
+target
+/fnlp-dev/target
+
+# IDEA #
+*.iml
+
+# Eclipse #
+.classpath
+.project
+.settings
+
+#large files#
+/data
+/tmp
+

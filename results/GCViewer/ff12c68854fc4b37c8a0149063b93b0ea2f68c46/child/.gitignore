@@ -1,0 +1,12 @@
+/.settings
+/target
+/src/nbproject
+/src/build/
+/src/dist/
+/src/build.xml
+/src/manifest.mf
+/deploy.bat
+/GCViewer.ofp
+/*.txt
+/*.iml
+/.idea/

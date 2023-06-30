@@ -1,0 +1,12 @@
+target
+*.iws
+*.ipr
+*.iml
+.classpath
+.project
+.settings
+.springBeans
+.idea
+classes/
+examples/rest-assured-itest-java/lib/
+lib/

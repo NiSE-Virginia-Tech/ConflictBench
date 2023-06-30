@@ -1,0 +1,4 @@
+refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
+Inline Method;method;0.85;1197-1275;org.activiti.engine.impl.bpmn.parser.BpmnParse.createServiceTask(ServiceTask, ScopeImpl);1464-1467;org.activiti.engine.impl.bpmn.parser.BpmnParse.createEmailServiceTask(ActivityImpl, String, List)
+Inline Method;method;0.91;1360-1415;org.activiti.engine.impl.bpmn.parser.BpmnParse.createSendTask(SendTask, ScopeImpl);1464-1467;org.activiti.engine.impl.bpmn.parser.BpmnParse.createEmailServiceTask(ActivityImpl, String, List)
+Inline Method;method;0.86;1197-1275;org.activiti.engine.impl.bpmn.parser.BpmnParse.createServiceTask(ServiceTask, ScopeImpl);1469-1472;org.activiti.engine.impl.bpmn.parser.BpmnParse.createShellServiceTask(ActivityImpl, String, List)

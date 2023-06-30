@@ -1,0 +1,7 @@
+/bin/
+out/
+out_simple.dex
+output.log
+
+sandbox
+obfuscated-example_simple.dex

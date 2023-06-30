@@ -1,0 +1,11 @@
+/bin
+/.classpath
+/.project
+/target
+/.settings
+/doc
+/*.class
+/.README.md.html
+/pom.xml.releaseBackup
+/*.iml
+/.DS_Store

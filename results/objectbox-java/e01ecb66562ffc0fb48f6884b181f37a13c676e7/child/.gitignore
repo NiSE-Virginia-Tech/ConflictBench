@@ -1,0 +1,41 @@
+.DS_Store
+
+# IntelliJ Idea
+.idea/
+*.iml
+
+# Gradle & Java build
+.gradle
+build/
+bin/
+gen/
+target/
+out/
+classes/
+gradle.properties
+
+# Local build properties
+build.properties
+local.properties
+
+# Native libs
+objectbox*.dll
+libobjectbox*.so
+libobjectbox*.dylib
+
+### Test DB files
+data.mdb
+lock.mdb
+test-db/
+jni-unit-test-db/
+test-db64/
+perf-test-db/
+perf-test-db64/
+
+## Backups
+.gitignore~
+*.txt~
+default.json.bak
+
+# Java crash reports
+hs_err_pid*.log

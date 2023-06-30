@@ -1,0 +1,16 @@
+*/dist/
+*/out/
+*/build
+*.iml
+.idea
+/user.*
+.gradle
+target
+/gradle.properties
+/jodd-bom/jodd-bom.txt.asc
+
+.project
+.classpath
+.settings
+/.coveralls.yml
+build

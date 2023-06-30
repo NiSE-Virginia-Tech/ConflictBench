@@ -1,0 +1,16 @@
+bin
+build
+test-output
+jitwatch.out
+.java-version
+.DS_Store
+.classpath
+.settings
+.project
+.gradle
+.idea
+*.iml
+target
+**/hs_err_pid*.log
+**/replay_pid*.log
+**/caffeine.log

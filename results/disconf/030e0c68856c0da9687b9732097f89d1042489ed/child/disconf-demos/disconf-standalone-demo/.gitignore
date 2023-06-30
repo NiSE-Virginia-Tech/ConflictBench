@@ -1,0 +1,11 @@
+/target
+/.settings
+/bin
+/.classpath
+/.project
+/target
+/disconf
+/log
+/pom.xml.releaseBackup
+/*.iml
+/.DS_Store

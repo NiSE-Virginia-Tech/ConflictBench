@@ -1,0 +1,24 @@
+# Macs
+.DS_Store
+**/.DS_Store
+
+# Gradle
+build/
+.gradle
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IDEA
+.idea
+
+# Logging
+log.txt
+/bin/
+
+
+smalivm/doc
+simplify/doc
+demoapp/doc

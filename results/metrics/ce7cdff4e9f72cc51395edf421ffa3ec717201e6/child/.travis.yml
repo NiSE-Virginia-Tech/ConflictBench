@@ -1,0 +1,16 @@
+language: java
+
+install: echo "I trust Maven."
+
+# don't just run the tests, also run Findbugs and friends
+script: mvn verify
+
+jdk:
+  - oraclejdk7
+  - oraclejdk8
+
+notifications:
+  email:
+    recipients:
+      - ryan@10e.us
+

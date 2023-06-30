@@ -1,0 +1,3 @@
+refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
+Change Method Signature;method;0.78;249-253;com.bigkoo.pickerview.TimePickerView.Builder.setRange2(Date, Date);251-256;com.bigkoo.pickerview.TimePickerView.Builder.setRangDate(Calendar, Calendar)
+Change Method Signature;method;0.93;233-236;com.bigkoo.pickerview.TimePickerView.Builder.setDate(Date);235-238;com.bigkoo.pickerview.TimePickerView.Builder.setDate(Calendar)

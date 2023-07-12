@@ -1,0 +1,2 @@
+refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
+Change Field Signature;field;0.84;73-73;com.netflix.simianarmy.basic.chaos.BasicChaosMonkey.enabledChaosTypes;73-73;com.netflix.simianarmy.basic.chaos.BasicChaosMonkey.allChaosTypes

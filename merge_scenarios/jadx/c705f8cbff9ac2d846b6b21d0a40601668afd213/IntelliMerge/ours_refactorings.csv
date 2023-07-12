@@ -1,0 +1,2 @@
+refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
+Extract Method;method;0.6;391-446;jadx.core.dex.visitors.blocksmaker.BlockProcessor.checkLoops(MethodNode, BlockNode);474-493;jadx.core.dex.visitors.blocksmaker.BlockProcessor.splitLoops(MethodNode, BlockNode, List)

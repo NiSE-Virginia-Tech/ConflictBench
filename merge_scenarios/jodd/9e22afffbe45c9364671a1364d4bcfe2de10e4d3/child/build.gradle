@@ -1,0 +1,539 @@
+// Copyright (c) 2003-present, Jodd Team (http://jodd.org)
+// All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// 1. Redistributions of source code must retain the above copyright notice,
+// this list of conditions and the following disclaimer.
+//
+// 2. Redistributions in binary form must reproduce the above copyright
+// notice, this list of conditions and the following disclaimer in the
+// documentation and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+
+plugins {
+	id "com.jfrog.bintray" version "1.7.3"
+}
+
+description = '''
+
+	Jodd is an open-source Java utility library and set of micro frameworks.
+	Jodd tools enriches JDK with many powerful and feature rich utilities.
+	It helps with everyday task, makes code more robust and reliable.
+	Jodd frameworks is set of lightweight application frameworks, compact yet powerful.
+	Designed following the CoC, DRY and SCS principles, it makes development
+	simple, but not simpler.
+'''
+
+//version = '3.9.1'
+version = '3.10-' + date()
+
+// --- properties -------------------------------------------------------------
+
+ext {
+	gradleScriptDir = "${rootProject.projectDir}/gradle"
+
+	// libraries
+
+	tomcatVersion = '7.0.47'
+
+	lib = [
+		mail:			[
+							'javax.mail:javax.mail-api:1.6.0',
+							'com.sun.mail:javax.mail:1.6.0'
+						],
+		activation:		'javax.activation:activation:1.1.1',
+		servlet:		'javax.servlet:javax.servlet-api:3.0.1',
+		jsp:			'javax.servlet.jsp:jsp-api:2.2',
+
+		log_slf4j:			'org.slf4j:slf4j-api:[1.7,1.8)',
+		log_slf4j_simple:	'org.slf4j:slf4j-simple:[1.7,1.8)',
+		log_logback_core: 	'ch.qos.logback:logback-core:[1.2,1.3)',
+		log_logback_classic: 'ch.qos.logback:logback-classic:[1.2,1.3)',
+		log_jcl:        	'commons-logging:commons-logging:[1.2,1.3)',
+		log_log4j2:		  'org.apache.logging.log4j:log4j-api:[2.8,2.9)',
+		log_log4j2_core:		  'org.apache.logging.log4j:log4j-core:[2.8,2.9)',
+
+//		asm:			'org.ow2.asm:asm:4.1',
+//		junit: 			'junit:junit:4.12',
+
+		junit5:			'org.junit.jupiter:junit-jupiter-engine:5.0.1',
+		junit5_params:	'org.junit.jupiter:junit-jupiter-params:5.0.1',
+		junit5_console: 'org.junit.platform:junit-platform-console:1.0.1',
+		hamcrest:       'org.hamcrest:hamcrest-core:1.3',
+		mockito:		'org.mockito:mockito-core:2.10.0',
+		hsqldb:			'org.hsqldb:hsqldb:2.2.9',
+		h2db:			'com.h2database:h2:1.1.111',
+		postgresql:		'org.postgresql:postgresql:9.4-1201-jdbc41',
+		mysql:			'mysql:mysql-connector-java:5.1.37',
+		mssql:			'com.microsoft.sqlserver:mssql-jdbc:6.1.0.jre8',
+		winstone:		'net.sourceforge.winstone:winstone:0.9.10',
+		greenmail:		'com.icegreen:greenmail:1.5.2',
+		//el_api:		'javax.el:el-api:2.2',
+		el_api:			"org.apache.tomcat:tomcat-jasper:${tomcatVersion}",
+		tomcat_embed:	[
+							"org.apache.tomcat:tomcat-jasper:${tomcatVersion}",
+							"org.apache.tomcat:tomcat-jasper-el:${tomcatVersion}",
+							"org.apache.tomcat:tomcat-catalina:${tomcatVersion}",
+							"org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+							"org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}",
+							"org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+							"org.apache.tomcat.embed:tomcat-embed-logging-log4j:${tomcatVersion}"],
+		mockserver:		'org.mock-server:mockserver-netty:3.10.4',
+	]
+
+	commonManifest = [
+		'Debug-Info' : 'on',
+		'Built-By' : 'jodd.org',
+		'Bundle-License' : 'http://jodd.org/license.html',
+		'Bundle-Vendor' : 'Jodd',
+		'Bundle-DocURL' : 'http://jodd.org',
+		'Implementation-Version': version,
+		'Implementation-Vendor': 'Jodd Team'
+	]
+}
+
+
+
+// --- modules sets -----------------------------------------------------------
+
+allprojects {
+	version = rootProject.version
+
+	ext.isSnapshot = version.contains("-");
+	ext.isSubproject = project.parent != null
+
+	repositories {
+		jcenter()
+		mavenCentral()
+	}
+}
+
+def javaModules() {
+	subprojects.findAll {
+		it.name.contains('jodd-') &&
+		!it.name.equals('jodd-bom') &&
+		!it.name.equals('jodd-all')
+	}
+}
+
+def javaBundleModules() {
+	rootProject.subprojects.findAll {
+		it.name.contains('jodd-') &&
+		!it.name.equals('jodd-joy') &&
+		!it.name.equals('jodd-bom') &&
+		!it.name.equals('jodd-all')
+	}
+}
+
+def javaMobileModules() {
+	rootProject.subprojects.findAll {
+		it.name.equals('jodd-core') ||
+		it.name.equals('jodd-bean') ||
+		it.name.equals('jodd-props')
+	}
+}
+
+
+// --- configuration ----------------------------------------------------------
+
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
+// exclude folders from IDEA project
+idea {
+	module {
+		excludeDirs += file('.idea')
+	}
+}
+
+configure(javaModules()) {
+	apply plugin: 'java'
+	apply plugin: 'jacoco'
+	apply plugin: 'osgi'
+	apply plugin: 'maven'
+	apply plugin: 'signing'
+	apply plugin: 'idea'
+	apply plugin: 'eclipse'
+	apply from: "${gradleScriptDir}/provided.gradle"
+	apply from: "${gradleScriptDir}/publish-maven.gradle"
+
+	group = 'org.jodd'
+
+	// bintray
+
+	apply plugin: 'com.jfrog.bintray'
+	apply from: "${gradleScriptDir}/bintray.gradle"
+
+	configurations {
+		published
+	}
+
+	// compile
+
+	compileJava {
+		sourceCompatibility = '1.8'
+		targetCompatibility = '1.8'
+	}
+
+	if (JavaVersion.current() != JavaVersion.VERSION_1_8) {
+		throw new GradleException("This build must be run with Java 8.")
+	}
+
+	tasks.withType(JavaCompile) {
+		options.encoding = 'UTF-8'
+		options.compilerArgs << "-Xlint:-options"
+		options.incremental = true
+		//configurations.compile.transitive = false
+	}
+	tasks.withType(Javadoc) {
+		options.addStringOption('Xdoclint:none', '-quiet')
+	}
+	compileJava.options.debug = true
+	compileJava.options.fork = true
+
+	task sourcesJar(type: Jar, dependsOn: classes) {
+		classifier = 'sources'
+		from sourceSets.main.allSource
+	}
+	task javadocJar(type: Jar, dependsOn: javadoc) {
+		classifier = 'javadoc'
+		from javadoc.destinationDir
+	}
+
+	// integration tests + performances
+
+	sourceSets {
+		perf {
+			java {
+				compileClasspath += main.output
+				runtimeClasspath += main.output
+			}
+		}
+		testInt {
+			java {
+				compileClasspath += main.output
+				compileClasspath += test.output
+				runtimeClasspath += main.output
+				runtimeClasspath += test.output
+			}
+		}
+	}
+
+	configurations {
+		testIntCompile.extendsFrom testCompile
+		testIntRuntime.extendsFrom testRuntime
+
+		perfCompile.extendsFrom testCompile
+		perfRuntime.extendsFrom testRuntime
+	}
+
+	dependencies {
+		perfCompile 'org.openjdk.jmh:jmh-core:1.19'
+		perfCompile 'org.openjdk.jmh:jmh-generator-annprocess:1.19'
+	}
+
+	idea {
+		module {
+			// DONT: use separate output folders for idea, don't mess with gradle
+			inheritOutputDirs false
+
+			// see: https://youtrack.jetbrains.com/issue/IDEA-151925#comment=27-2356605
+			// since IDEA 2017.2.3
+			testSourceDirs += project.sourceSets.testInt.java.srcDirs
+			testSourceDirs += project.sourceSets.testInt.resources.srcDirs
+		}
+	}
+
+	task perf(type:JavaExec) {
+		group 'Verification'
+		description 'Execute benchmarks.'
+
+		main 'org.openjdk.jmh.Main'
+		classpath = sourceSets.perf.runtimeClasspath
+	}
+
+	task testUnit(type: JavaExec, dependsOn: compileTestJava) {
+		group 'Verification'
+		description 'Runs the unit tests.'
+
+		dependencies {
+			testRuntime lib.junit5_console
+		}
+		classpath = sourceSets.test.runtimeClasspath
+
+		main 'org.junit.platform.console.ConsoleLauncher'
+		args = ['--scan-classpath', sourceSets.test.output.classesDirs.asPath,
+				'--reports-dir', "${buildDir}/test-results/test"
+		]
+	}
+	test.dependsOn testUnit
+
+	task testIntegration(type: JavaExec, dependsOn: jar) {
+		group 'Verification'
+		description 'Runs the integration tests.'
+
+		dependencies {
+			testRuntime lib.junit5_console
+		}
+
+		classpath = sourceSets.testInt.runtimeClasspath
+		systemProperties['jar.path'] = jar.archivePath
+
+		main 'org.junit.platform.console.ConsoleLauncher'
+		args = ['--scan-classpath', sourceSets.testInt.output.classesDirs.asPath,
+				'--reports-dir', "${buildDir}/test-results/testInt"
+		]
+	}
+
+	afterEvaluate {
+		jacoco {
+			applyTo testUnit
+			applyTo testIntegration
+		}
+		testUnit.extensions.getByName("jacoco").excludes        = ['*Test*', '*.?', '*Foo*', 'jodd.asm5.*', '*.fixtures.*']
+		testIntegration.extensions.getByName("jacoco").excludes = ['*Test*', '*.?', '*Foo*', 'jodd.asm5.*', '*.fixtures.*']
+	}
+	jacocoTestReport {
+		reports {
+			xml.enabled true
+			html.enabled true
+		}
+	}
+
+	task codeCoverage(type: JacocoReport) {
+		group 'Verification'
+		description 'Generates code coverage reports for a single module'
+
+		executionData fileTree("${buildDir}/jacoco/").include("*.exec")
+		sourceSets sourceSets.main
+
+		reports {
+			html.enabled true
+			html.destination file("${buildDir}/reports/jacoco")
+		}
+	}
+
+	codeCoverage.dependsOn testUnit
+	codeCoverage.dependsOn testIntegration
+
+	//check.dependsOn testIntegration
+	//testIntegration.mustRunAfter test
+
+	// artifacts
+
+	artifacts {
+		archives jar
+		archives sourcesJar
+		archives javadocJar
+
+		published jar
+		published sourcesJar
+		published javadocJar
+	}
+
+	jar {
+		afterEvaluate {
+			manifest.attributes << commonManifest
+			manifest {
+				name = project.moduleName
+				version = project.version
+				description = project.moduleDescription
+				attributes 'Implementation-Title': project.moduleName
+			}
+		}
+	}
+
+	javadoc {
+		exclude '**/asm5/**'
+		afterEvaluate {
+			configure(options) {
+				windowTitle 'Jodd API Documentation'
+				docTitle "$project.moduleName $project.version API Documentation"
+				bottom = 'Copyright &#169; 2003-2013 <a href="http://jodd.org">Jodd Team</a>'
+				breakIterator = true
+				author = false
+				encoding = 'UTF-8'
+				docEncoding = 'UTF-8'
+				stylesheetFile = file('src/main/javadoc/jodd.css')
+				source = '1.8'
+				failOnError = false
+			}
+		}
+	}
+}
+
+// --- project ----------------------------------------------------------------
+
+apply plugin: 'project-report'
+apply plugin: 'jacoco'
+apply from: "${gradleScriptDir}/license.gradle"
+
+def javaBundleModulesSources = javaBundleModules().sourceSets.main
+
+task buildModules {
+	dependsOn javaModules().build
+}
+
+task testAll {
+	group 'Verification'
+	description 'Runs all the tests.'
+
+	dependsOn javaModules().testIntegration
+	dependsOn javaModules().test
+}
+
+task clean(type: Delete) {
+	group 'Project'
+	description 'Cleans everything.'
+
+	delete buildDir
+}
+
+task javadocAll(type: Javadoc) {
+	group 'Documentation'
+	description 'Builds the aggregated Java docs for all modules.'
+	dependsOn buildModules
+
+	maxMemory '512m'
+
+	source javaBundleModulesSources.allJava
+	exclude '**/asm4/**'
+	exclude '**/asm5/**'
+
+	destinationDir = file("$buildDir/reports/javadoc")
+	classpath = files(javaBundleModulesSources.compileClasspath)
+
+	configure(options) {
+		windowTitle 'Jodd API Documentation'
+		docTitle "Jodd Project $project.version API Documentation"
+		bottom = 'Copyright &#169; 2003-2016 <a href="http://jodd.org">Jodd Team</a>'
+		breakIterator = true
+		author = false
+		encoding = 'UTF-8'
+		docEncoding = 'UTF-8'
+		stylesheetFile = file('src/main/javadoc/jodd.css')
+		source = '1.9'
+	}
+
+	inputs.files(javaBundleModulesSources.allSource + javaBundleModulesSources.compileClasspath)
+	outputs.dir destinationDir
+}
+
+dependencyReport {
+	projects = javaModules()
+}
+
+task bintray {
+	group 'Publishing'
+	description 'Publish all artifcats to bintray'
+
+	dependsOn javaModules().bintrayUpload
+	dependsOn(":jodd-bom:bintrayUpload")
+}
+
+task codeCoverageReport(type: JacocoReport) {
+	group 'Verification'
+	description 'Generates code coverage reports for the whole project'
+
+	executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
+	jacocoClasspath
+
+	javaModules().each {
+		sourceSets it.sourceSets.main
+	}
+
+	reports {
+		xml.enabled true
+		xml.destination file("${buildDir}/reports/jacoco/report.xml")
+		html.enabled true
+		csv.enabled false
+	}
+}
+
+codeCoverageReport.dependsOn testAll
+
+
+// --- release ----------------------------------------------------------------
+
+task release() {
+	group 'Project'
+	description 'Builds everything for the release.'
+
+	dependsOn buildModules
+	dependsOn testAll
+	dependsOn javadocAll
+	dependsOn ':distribution:build'
+}
+
+gradle.taskGraph.whenReady { taskGraph ->
+	if (taskGraph.hasTask(release)) {
+
+		println ""
+		println "	You are about to run the 'release' task for Jodd project!"
+		println "	This task builds distribution artifacts, but also runs"
+		println "	integration tests and generates reports (javadoc, coverage...)"
+		println "	For running integration tests you need infrastructure running;"
+		println "	please find more information here: http://jodd.org/code.html"
+		println ""
+		println "	Usually, you don't need to run this task. If you want to build"
+		println "	distribution jars and run all unit tests, then just run the "
+		println "	default 'build' task instead."
+		println ""
+
+		def char c
+
+		def console = System.console()
+		if (console) {
+			line = console.readLine('	> Do you want to continue? [y/N]: ')
+			line = line.trim()
+			c = line.charAt(0)
+		}
+		else {
+			println "	> Do you want to continue? [y/N]: "
+			println ""
+
+			// Can't use `console` because it does not work with Gradle Daemon
+			def DataInputStream dis = new DataInputStream(System.in);
+
+			c = dis.readByte()
+		}
+
+		if (!(c == 'Y' || c == 'y')) {
+			throw new StopExecutionException("Execution terminated by user")
+		}
+	}
+}
+
+task version() {
+	println "-----------------------"
+	println "  Jodd ${version}"
+	if (isSnapshot) println "  [snapshot]"
+	println "-----------------------"
+}
+
+// --- util -------------------------------------------------------------------
+
+def date() {
+	def date = new Date()
+	def formattedDate = date.format('yyyyMMdd')
+	return formattedDate
+}
+
+// --- wrapper ----------------------------------------------------------------
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '4.2'
+}

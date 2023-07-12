@@ -1,0 +1,2 @@
+refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
+Inline Method;method;0.21;33-73;org.cf.smalivm.smali.SmaliClassLoader.findClass(String);72-93;org.cf.smalivm.smali.SmaliClassLoader.loadClass(String)

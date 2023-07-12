@@ -1,0 +1,4 @@
+refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
+Change Method Signature;method;0.99;228-237;com.ctrip.apollo.portal.service.ConfigServiceTest.assembleConfigItem(long, String, int, String, String);223-232;com.ctrip.apollo.portal.service.ConfigServiceTest.assembleConfigItem(long, String, String, String, String)
+Change Method Signature;method;0.98;206-212;com.ctrip.apollo.portal.service.ConfigServiceTest.assembleCluster(long, long, String);205-211;com.ctrip.apollo.portal.service.ConfigServiceTest.assembleCluster(long, String, String)
+Change Method Signature;method;0.98;173-179;com.ctrip.apollo.portal.service.ConfigServiceTest.assembleVersion(long, String, long);172-178;com.ctrip.apollo.portal.service.ConfigServiceTest.assembleVersion(String, String, long)

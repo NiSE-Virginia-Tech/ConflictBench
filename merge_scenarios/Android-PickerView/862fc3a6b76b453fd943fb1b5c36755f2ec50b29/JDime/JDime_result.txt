@@ -1,0 +1,2 @@
+Bowen add:
+The class org.extendj.ast.Dot requires a fixed number of children. JDime children: 1 ExtendJ children: 2 after AST rebuild. This is either a bug in ExtendJ or in JDime! Inspect AST element target:705

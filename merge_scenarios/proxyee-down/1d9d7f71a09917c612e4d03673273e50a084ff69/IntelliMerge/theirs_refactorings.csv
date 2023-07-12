@@ -1,0 +1,2 @@
+refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
+Change Method Signature;method;0.99;38-41;lee.study.down.dispatch.HttpDownHandleCallback.onError(HttpDownInfo, ChunkInfo, Throwable);44-47;lee.study.down.dispatch.HttpDownHandleCallback.onChunkError(HttpDownInfo, ChunkInfo, Throwable)

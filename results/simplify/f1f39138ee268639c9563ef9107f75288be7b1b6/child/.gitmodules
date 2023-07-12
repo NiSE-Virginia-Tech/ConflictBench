@@ -1,3 +1,0 @@
-[submodule "smalivm/src/main/resources/framework/smali"]
-	path = smalivm/src/main/resources/framework/smali
-	url = https://github.com/CalebFenton/AndroidFrameworkSmali.git

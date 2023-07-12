@@ -1,2 +1,0 @@
-refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
-Change Method Signature;method;0.93;472-475;us.codecraft.webmagic.Site.setHttpProxyPool(List);479-482;us.codecraft.webmagic.Site.setHttpProxyPool(List, boolean)

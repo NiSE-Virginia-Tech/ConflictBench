@@ -1,2 +1,0 @@
-refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
-Extract Method;method;0.7;443-459;com.bigkoo.pickerview.TimePickerView.onClick(View);465-475;com.bigkoo.pickerview.TimePickerView.returnData(View)

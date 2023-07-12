@@ -1,2 +1,0 @@
-refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
-Change Method Signature;method;0.82;170-178;com.github.benmanes.caffeine.cache.simulator.admission.countmin4.CountMin4.incrementAt(int, int);170-178;com.github.benmanes.caffeine.cache.simulator.admission.countmin4.CountMin4.incrementAt(int, int, long)

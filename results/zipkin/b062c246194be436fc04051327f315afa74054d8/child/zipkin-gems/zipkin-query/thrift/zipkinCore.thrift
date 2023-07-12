@@ -1,1 +1,0 @@
-../../../zipkin-scrooge/src/main/thrift/zipkinCore.thrift

@@ -1,2 +1,0 @@
-refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
-Change Method Signature;method;0.73;505-524;com.zaxxer.hikari.pool.HikariPool.initializeConnections();507-524;com.zaxxer.hikari.pool.HikariPool.checkFailFast()

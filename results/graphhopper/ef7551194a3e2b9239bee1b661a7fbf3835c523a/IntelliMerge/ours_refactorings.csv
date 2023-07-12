@@ -1,2 +1,0 @@
-refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
-Change Method Signature;method;0.78;71-88;com.graphhopper.storage.index.LocationIndexTreeTest.createTestGraph();69-86;com.graphhopper.storage.index.LocationIndexTreeTest.createTestGraph(EncodingManager)

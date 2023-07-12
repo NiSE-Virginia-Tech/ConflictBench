@@ -1,4 +1,0 @@
-refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
-Change Method Signature;method;0.82;18-24;com.github.eirslett.maven.plugins.frontend.lib.FrontendPluginFactory.getNodeAndNPMInstaller();16-21;com.github.eirslett.maven.plugins.frontend.lib.FrontendPluginFactory.getNodeAndNPMInstaller(ProxyConfig)
-Change Method Signature;method;0.78;30-32;com.github.eirslett.maven.plugins.frontend.lib.FrontendPluginFactory.getNpmRunner();27-29;com.github.eirslett.maven.plugins.frontend.lib.FrontendPluginFactory.getNpmRunner(ProxyConfig)
-Change Constructor Signature;constructor;0.85;13-16;com.github.eirslett.maven.plugins.frontend.lib.FrontendPluginFactory.FrontendPluginFactory(File, ProxyConfig);11-14;com.github.eirslett.maven.plugins.frontend.lib.FrontendPluginFactory.FrontendPluginFactory(File, File)

@@ -1,0 +1,2 @@
+refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
+Change Method Signature;method;0.71;891-932;org.web3j.codegen.SolidityFunctionWrapper.buildTupleResultContainer(MethodSpec.Builder, ParameterizedTypeName);919-983;org.web3j.codegen.SolidityFunctionWrapper.buildTupleResultContainer(MethodSpec.Builder, ParameterizedTypeName, List)

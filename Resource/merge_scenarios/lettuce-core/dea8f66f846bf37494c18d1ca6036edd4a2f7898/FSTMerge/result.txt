@@ -1,0 +1,25 @@
+Found the following features in expression file:
+left
+base
+right
+processing: /home/ppp/Research_Projects/Merge_Conflicts/Resource/workspace/left/src/test/resources/log4j.properties
+processing: /home/ppp/Research_Projects/Merge_Conflicts/Resource/workspace/base/src/test/resources/log4j.properties
+processing: /home/ppp/Research_Projects/Merge_Conflicts/Resource/workspace/right/src/test/resources/log4j.properties
+[NT -> left : Feature]
+	[NT -> src : Folder]
+		[NT -> test : Folder]
+			[NT -> resources : Folder]
+				[NT -> log4j.properties : .properties-File]
+					[T -> log4j.properties : .properties-Content "# Root logger option log4j.rootLogger=INFO, stdout, file  # Direct log messages to stdout log4j.appender.stdout=org.apache.log4j.ConsoleAppender log4j.appender.stdout.Target=System.out log4j.appender.stdout.threshold=FATAL log4j.appender.stdout.layout=org.apache.log4j.PatternLayout log4j.appender.stdout.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%t] (%c{1}:%L) %m%n  log4j.appender.file=org.apache.log4j.FileAppender log4j.appender.file.File=target/log.log log4j.appender.file.Append=false log4j.appender.file.layout=org.apache.log4j.PatternLayout log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%t] (%c{1}:%L) %m%n  log4j.logger.com.lambdaworks=INFO log4j.logger.io.netty=INFO log4j.logger.com.lambdaworks.redis.protocol=DEBUG log4j.logger.com.lambdaworks.redis.cluster=INFO log4j.logger.com.lambdaworks.redis.protocol.ConnectionWatchdog=INFO    " compose:StringConcatenation merge: Default]
+[NT -> base : Feature]
+	[NT -> src : Folder]
+		[NT -> test : Folder]
+			[NT -> resources : Folder]
+				[NT -> log4j.properties : .properties-File]
+					[T -> log4j.properties : .properties-Content "# Root logger option log4j.rootLogger=INFO, stdout, file  # Direct log messages to stdout log4j.appender.stdout=org.apache.log4j.ConsoleAppender log4j.appender.stdout.Target=System.out log4j.appender.stdout.threshold=DEBUG log4j.appender.stdout.layout=org.apache.log4j.PatternLayout log4j.appender.stdout.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%t] (%c{1}:%L) %m%n  log4j.appender.file=org.apache.log4j.FileAppender log4j.appender.file.File=target/log.log log4j.appender.file.Append=false log4j.appender.file.layout=org.apache.log4j.PatternLayout log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%t] (%c{1}:%L) %m%n  log4j.logger.com.lambdaworks=INFO log4j.logger.io.netty=INFO log4j.logger.com.lambdaworks.redis.cluster=INFO log4j.logger.com.lambdaworks.redis.protocol.ConnectionWatchdog=INFO    " compose:StringConcatenation merge: Default]
+[NT -> right : Feature]
+	[NT -> src : Folder]
+		[NT -> test : Folder]
+			[NT -> resources : Folder]
+				[NT -> log4j.properties : .properties-File]
+					[T -> log4j.properties : .properties-Content "# Root logger option log4j.rootLogger=INFO, stdout, capture, file  # Direct log messages to stdout log4j.appender.stdout=org.apache.log4j.ConsoleAppender log4j.appender.stdout.Target=System.out log4j.appender.stdout.threshold=FATAL log4j.appender.stdout.layout=org.apache.log4j.PatternLayout log4j.appender.stdout.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%t] %m (%c{1}:%L)%n  log4j.appender.file=org.apache.log4j.FileAppender log4j.appender.file.File=target/log.log log4j.appender.file.Append=false log4j.appender.file.layout=org.apache.log4j.PatternLayout log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%t] %m (%c{1}:%L)%n  log4j.appender.capture=com.lambdaworks.CapturingLogAppender log4j.appender.capture.layout=org.apache.log4j.PatternLayout log4j.appender.capture.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%t] %m (%c{1}:%L)%n  log4j.logger.io.netty=INFO  log4j.logger.com.lambdaworks=INFO log4j.logger.com.lambdaworks.redis.cluster=INFO log4j.logger.com.lambdaworks.redis.protocol=INFO log4j.logger.com.lambdaworks.redis.RedisClient=INFO log4j.logger.com.lambdaworks.redis.protocol.ConnectionWatchdog=INFO    " compose:StringConcatenation merge: Default]

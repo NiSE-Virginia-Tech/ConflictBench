@@ -1,3 +1,0 @@
-refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
-Change Method Signature;method;0.7;126-140;com.googlecode.greysanatomy.GreysAnatomyMain.activeConsoleClient(Configer);126-140;com.googlecode.greysanatomy.GreysAnatomyMain.activeConsoleClient(Configure)
-Change Method Signature;method;0.74;91-118;com.googlecode.greysanatomy.GreysAnatomyMain.attachAgent(Configer);91-118;com.googlecode.greysanatomy.GreysAnatomyMain.attachAgent(Configure)

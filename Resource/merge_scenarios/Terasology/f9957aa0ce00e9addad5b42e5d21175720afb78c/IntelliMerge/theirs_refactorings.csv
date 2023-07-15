@@ -1,0 +1,3 @@
+refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
+Change Method Signature;method;0.86;43-61;org.terasology.world.generator.plugin.TempWorldGeneratorPluginLibrary.getEnv();40-58;org.terasology.world.generator.plugin.TempWorldGeneratorPluginLibrary.getEnv(Context)
+Change Constructor Signature;constructor;0.65;39-41;org.terasology.world.generator.plugin.TempWorldGeneratorPluginLibrary.TempWorldGeneratorPluginLibrary();36-38;org.terasology.world.generator.plugin.TempWorldGeneratorPluginLibrary.TempWorldGeneratorPluginLibrary(Context)

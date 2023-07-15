@@ -1,2 +1,0 @@
-refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
-Change Constructor Signature;constructor;0.84;122-124;com.google.errorprone.ErrorProneScanner.ErrorProneScanner(BugChecker);129-133;com.google.errorprone.ErrorProneScanner.ErrorProneScanner(BugChecker[])

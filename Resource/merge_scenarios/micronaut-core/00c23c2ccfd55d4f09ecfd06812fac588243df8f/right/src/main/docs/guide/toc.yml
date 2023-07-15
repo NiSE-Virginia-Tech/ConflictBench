@@ -1,0 +1,244 @@
+introduction:
+  title: Introduction
+  whatsNew: What's New?
+quickStart:
+  title: Quick Start
+  buildCLI:
+    title: Build/Install the CLI
+    installSdkman: Install with Sdkman
+    installWindows: Install through Binary on Windows
+    buildSource: Building from Source
+  creatingServer: Creating a Server Application
+  ideSetup: Setting up an IDE
+  creatingClient: Creating a Client
+  deployingApp: Deploying the Application
+ioc:
+  title: Inversion of Control
+  beans: Defining Beans
+  how: How Does it Work?
+  beanContext: The BeanContext 
+  types: Injectable Container Types
+  qualifiers: Bean Qualifiers
+  scopes:
+    title: Scopes
+    builtInScopes: Built-In Scopes
+    refreshable: Refreshable Scope
+    metaScopes: Scopes on Meta Annotations
+  factories: Bean Factories
+  conditionalBeans: Conditional Beans
+  replaces: Bean Replacement
+  beanConfigurations: Bean Configurations
+  lifecycle: Life-Cycle Methods
+  events: Bean Events
+  annotationMetadata: Bean Annotation Metadata
+  springBeans: Micronaut Beans And Spring
+  android: Android Support
+config:
+  title: Application Configuration
+  environments: The Environment
+  propertySource: PropertySources
+  valueAnnotation: Configuration Injection
+  configurationProperties: Configuration Properties
+  customTypeConverter: Custom Type Converters
+  eachProperty: Using @EachProperty to Drive Configuration
+  eachBean: Using @EachBean to Drive Configuration
+  # validation: Validating Configuration
+aop:
+  title: Aspect Oriented Programming
+  aroundAdvice: Around Advice
+  introductionAdvice: Introduction Advice
+  validation:
+    title: Validation Advice
+  caching: 
+    title: Cache Advice
+  retry:
+    title: Retry Advice
+  scheduling:
+    title: Scheduled Tasks
+  springAop:
+    title: Bridging Spring AOP
+httpServer:
+  title: The HTTP Server
+  runningServer: Running the Embedded Server
+  runningSpecificPort: Running Server on a Specific Port
+  routing: HTTP Routing
+  binding: Simple Request Binding
+  requestResponse: The HttpRequest and HttpResponse
+  producesAnnotation: Response Content-Type
+  consumesAnnotation: Accepted Request Content-Type
+  reactiveServer:
+    title: Reactive HTTP Request Processing
+    bodyAnnotation: Using the @Body Annotation
+    reactiveResponses: Reactive Responses
+  jsonBinding: JSON Binding with Jackson
+  staticResources: Serving Static Resources
+#  contentNegotiation: Content Negotiation
+  errorHandling: Error Handling
+  formData: Handling Form Data
+  serverIO: Writing Response Data
+  uploads: File Uploads
+  transfers: File Transfers
+  sse: Server Sent Events
+  filters: HTTP Filters
+  sessions: HTTP Sessions
+  serverEvents: Server Events
+  serverConfiguration:
+    title: Configuring the HTTP Server
+    threadPools: Configuring Server Thread Pools
+    cors: Configuring CORS
+    https: Securing the Server with HTTPS  
+httpClient:
+  title: The HTTP Client
+  lowLevelHttpClient:
+    title: Using the Low-Level HTTP Client
+    clientBasics: Sending your first HTTP request
+    clientPostRequests: Posting a Request Body
+    clientUploads: Multipart Client Uploads
+    clientStreaming: Streaming JSON over HTTP
+    clientConfiguration: Configuring HTTP clients
+  clientAnnotation:
+    title: Declarative HTTP Clients with @Client
+    clientParameters: Customizing Parameter Binding
+    clientAnnotationStreaming: Streaming with @Client
+    clientHeaders: Customizing Request Headers
+    clientJackson: Customizing Jackson Settings
+    clientRetry: Retry and Circuit Breaker
+    clientFallback: Client Fallbacks
+    netflixHystrix: Netflix Hystrix Support
+  clientFilter: HTTP Client Filters
+cloud:
+  title: Cloud Native Features
+  cloudConfiguration:
+    title: Cloud Configuration
+    distributedConfiguration: Distributed Configuration
+    distributedConfigurationConsul: Consul Support
+#    distributedConfigurationAwsParameterStore: AWS Parameter Store Support
+  serviceDiscovery:
+    title: Service Discovery
+    serviceDiscoveryConsul: Consul Support
+    serviceDiscoveryEureka: Eureka Support
+    serviceDiscoveryKubernetes: Kubernetes Support
+#    serviceDiscoveryRoute53: AWS Route 53 Support
+  clientSideLoadBalancing:
+    title: Client Side Load Balancing
+    netflixRibbon: Netflix Ribbon Support
+  distributedTracing:
+    title: Distributed Tracing
+    zipkin: Tracing with Zipkin
+    jaeger: Tracing with Jaeger
+serverlessFunctions:
+  title: Serverless Functions
+  writingFunctions:
+    title: Writing Functions
+    functionApplication: FunctionApplication
+    functionBean: FunctionBean
+    groovyFunctions: Groovy Functions
+  runningFunctions:
+    title: Running Functions
+    functionWeb: Functions as Web Applications
+    functionCLI: Functions as CLI Applications
+  lambdaFunctions: Deploying Functions to AWS Lambda 
+  callingFunctions: Calling Functions with FunctionClient
+messaging:
+  title: Message-Driven Microservices
+  kafka:
+    title: Kafka Support
+    kafkaQuickStart: Kafka Quick Start
+    kafkaClient:
+      title: Kafka Producers Using @KafkaClient
+      kafkaClientMethods: Defining @KafkaClient Methods
+      kafkaClientConfiguration: Configuring @KafkaClient beans
+      kafkaClientBatch: Sending Records in Batch
+      kafkaClientScope: Injecting Kafka Producer Beans
+      kafkaEmbedded: Embedding Kafka
+    kafkaListener:
+      title: Kafka Consumers Using @KafkaListener
+      kafkaListenerMethods: Defining @KafkaListener Methods
+      kafkaListenerConfiguration: Configuring @KafkaListener beans
+      kafkaOffsets: Commiting Kafka Offsets
+      kafkaListenerBatch: Kafka Batch Processing
+      kafkaSendTo: Forwarding Messages with @SendTo
+      kafkaExceptions: Handling Consumer Exceptions
+    kafkaApplications:
+      title: Running Kafka Applications
+      kafkaHealth: Kafka Health Checks
+configurations:
+  title: Configurations
+  dataAccess:
+    title: Configurations for Data Access
+    sqlSupport: Configuring a SQL Data Source
+    hibernateSupport: Configuring Hibernate
+    mongoSupport: Configuring MongoDB
+    neo4jSupport: Configuring Neo4j
+    redisSupport: Configuring Redis
+    cassandraSupport: Configuring Cassandra
+  otherConfigurations:
+    title: Other Configurations
+    rabbitmq: RabbitMQ
+languageSupport:
+  title: Language Support
+  java: Micronaut for Java
+  groovy: Micronaut for Groovy
+  kotlin: Micronaut for Kotlin
+management:
+  title: Management & Monitoring
+  buildingEndpoints:
+    title: Creating Endpoints
+    endpointAnnotation: The Endpoint Annotation
+    endpointMethod: Endpoint Methods
+    endpointConfiguration: Endpoint Configuration
+  providedEndpoints:
+    title: Built-In Endpoints
+    beansEndpoint: The Beans Endpoint
+    infoEndpoint: The Info Endpoint
+    healthEndpoint: The Health Endpoint
+    metricsEndpoint: The Metrics Endpoint
+    refreshEndpoint: The Refresh Endpoint
+    routesEndpoint: The Routes Endpoint
+    stopEndpoint: The Server Stop Endpoint
+security:
+  title: Security
+  authenticationProviders: Authentication Providers
+  securityRule:
+      title: Security Rules
+      ipPattern: IP Pattern Rule
+      secured: Secured Annotation
+      interceptUrlMap: Intercept URL Map
+      builtInEndpointsAccess: Built-In Endpoints Security
+  authenticationStrategies:
+    title: Authentication Strategies
+    basicAuth: Basic Auth
+    session: Session Authentication
+    jwt:
+      title: JSON Web Token
+      reader:
+        title: Reading JWT Token
+        bearerToken: Bearer Token Reader
+        cookieToken: Cookie Token Reader
+      jwtGenerator:
+        title: JWT Token Generation
+        jwtGeneratorSignature: JWT Signature
+        jwtGeneratorEncryption: Encrypted JWTs
+      jwtValidation: JWT Token Validation
+      claimsGeneration: Claims Generation
+      render:
+        title: Token Render
+  endpoints:
+    title: Built-In Security Controllers
+    login: Login Controller
+    logout: Logout Controller
+    refresh: Refresh Controller
+  securityEvents: Security Events
+cli:
+  title: Micronaut CLI
+  createProject: Creating a Project
+  profiles:
+    title: Profiles
+    comparingVersions: Comparing Versions
+  features: Features
+  commands: Commands
+appendix:
+  title: Appendices
+  faq: Frequently Asked Questions (FAQ)
+  problems: Common Problems
+  breaks: Breaking Changes

@@ -1,2 +1,0 @@
-refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
-Extract Method;method;0.67;316-330;com.facebook.presto.hive.parquet.ParquetTester.assertPageSource(List, Iterator<?>[], ConnectorPageSource);404-418;com.facebook.presto.hive.parquet.ParquetTester.assertPageSource(List, Iterator<?>[], ConnectorPageSource, Optional)

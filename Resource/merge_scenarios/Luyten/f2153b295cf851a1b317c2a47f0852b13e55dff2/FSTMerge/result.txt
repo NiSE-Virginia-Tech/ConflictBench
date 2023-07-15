@@ -1,0 +1,32 @@
+Found the following features in expression file:
+left
+base
+right
+processing: /home/ppp/Research_Projects/Merge_Conflicts/Resource/workspace/right/src/com/modcrafting/luyten/Selection.java
+processing: /home/ppp/Research_Projects/Merge_Conflicts/Resource/workspace/right/src/com/modcrafting/luyten/Selection.java
+[NT -> right : Feature]
+	[NT -> src : Folder]
+		[NT -> com : Folder]
+			[NT -> modcrafting : Folder]
+				[NT -> luyten : Folder]
+					[NT -> Selection.java : Java-File]
+						[NT -> - : CompilationUnit]
+							[T -> - : PackageDeclaration "package com.modcrafting.luyten;" compose:Replacement merge: Default]
+							[NT -> Selection : ClassDeclaration]
+								[T -> - : Modifiers "public" compose:Replacement merge: SemanticConflict]
+								[T -> - : ClassOrInterface1 "class" compose:Replacement merge: Default]
+								[T -> Selection : Id "Selection" compose:Replacement merge: Default]
+								[T -> ImplList : ImplementsList "implements Comparable<Selection>" compose:Replacement merge: SemanticConflict]
+								[T -> from : FieldDecl "public final Integer from;" compose:Replacement merge: SemanticConflict]
+								[T -> to : FieldDecl "public final Integer to;" compose:Replacement merge: SemanticConflict]
+								[T -> Selection(Integer-Integer-Integer-Integer) : ConstructorDecl "public Selection(Integer from, Integer to) {   this.from = from;   this.to = to;  }" compose:Replacement merge: LineBased]
+								[T -> compareTo(Selection-Selection) : MethodDecl "@Override  public int compareTo(Selection o) {   return from.compareTo(o.from);  }" compose:Replacement merge: LineBased]
+								[T -> hashCode({FormalParametersInternal}) : MethodDecl "@Override  public int hashCode() {   final int prime = 31;   int result = 1;   result = prime * result + ((from == null) ? 0 : from.hashCode());   return result;  }" compose:Replacement merge: LineBased]
+								[T -> equals(Object-Object) : MethodDecl "@Override  public boolean equals(Object obj) {   if (this == obj)    return true;   if (obj == null)    return false;   if (getClass() != obj.getClass())    return false;   Selection other = (Selection) obj;   if (from == null) {    if (other.from != null)     return false;   } else if (!from.equals(other.from))    return false;   return true;  }" compose:Replacement merge: LineBased]
+[NT -> right : Feature]
+	[NT -> src : Folder]
+		[NT -> com : Folder]
+			[NT -> modcrafting : Folder]
+				[NT -> luyten : Folder]
+					[NT -> Selection.java.merge : .java.merge-File]
+						[T -> Selection.java : .java-Content "package com.modcrafting.luyten;  public class Selection implements Comparable<Selection> {  public final Integer from;  public final Integer to;   public Selection(Integer from, Integer to) {   this.from = from;   this.to = to;  }   @Override  public int compareTo(Selection o) {   return from.compareTo(o.from);  }   @Override  public int hashCode() {   final int prime = 31;   int result = 1;   result = prime * result + ((from == null) ? 0 : from.hashCode());   return result;  }   @Override  public boolean equals(Object obj) {   if (this == obj)    return true;   if (obj == null)    return false;   if (getClass() != obj.getClass())    return false;   Selection other = (Selection) obj;   if (from == null) {    if (other.from != null)     return false;   } else if (!from.equals(other.from))    return false;   return true;  } } " compose:StringConcatenation merge: LineBased]

@@ -1,0 +1,2 @@
+refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
+Change Method Signature;method;0.63;62-66;com.spotify.docker.Utils.pushImage(DockerClient, String, Log);67-82;com.spotify.docker.Utils.pushImage(DockerClient, String, Log, DockerBuildInformation)

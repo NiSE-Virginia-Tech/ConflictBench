@@ -1,2 +1,0 @@
-refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
-Change Method Signature;method;0.99;41-44;com.bluelinelabs.logansquare.processor.type.field.TypeConverterFieldType.serialize(Builder, int, String, String, boolean, boolean, boolean, boolean);43-46;com.bluelinelabs.logansquare.processor.type.field.TypeConverterFieldType.serialize(Builder, int, String, List, String, boolean, boolean, boolean, boolean)

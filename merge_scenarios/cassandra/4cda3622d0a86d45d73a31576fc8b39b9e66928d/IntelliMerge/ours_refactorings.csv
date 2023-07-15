@@ -1,3 +1,0 @@
-refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
-Change Method Signature;method;0.96;80-91;org.apache.cassandra.net.OutboundTcpConnection.enqueue(MessageOut, String);83-94;org.apache.cassandra.net.OutboundTcpConnection.enqueue(MessageOut, int)
-Change Constructor Signature;constructor;0.97;405-410;org.apache.cassandra.net.OutboundTcpConnection.QueuedMessage.QueuedMessage(MessageOut, String);393-398;org.apache.cassandra.net.OutboundTcpConnection.QueuedMessage.QueuedMessage(MessageOut, int)

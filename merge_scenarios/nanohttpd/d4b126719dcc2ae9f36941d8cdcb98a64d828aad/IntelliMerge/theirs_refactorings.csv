@@ -1,2 +1,0 @@
-refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
-Change Field Signature;field;0.72;384-384;fi.iki.elonen.NanoHTTPD.Response.Status.descr;391-391;fi.iki.elonen.NanoHTTPD.Response.Status.description

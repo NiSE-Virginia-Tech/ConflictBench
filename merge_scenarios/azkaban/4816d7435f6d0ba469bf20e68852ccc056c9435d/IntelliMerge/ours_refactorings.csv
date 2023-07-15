@@ -1,2 +1,0 @@
-refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
-Change Method Signature;method;0.66;446-513;azkaban.webapp.servlet.ScheduleServlet.ajaxAdvSchedule(HttpServletRequest, HashMap, User);348-415;azkaban.webapp.servlet.ScheduleServlet.ajaxScheduleFlow(HttpServletRequest, HashMap, User)

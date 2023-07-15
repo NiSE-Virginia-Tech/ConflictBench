@@ -1,0 +1,2 @@
+refactoring_type;node_type;confidence;before_location;before_node;after_location;after_node
+Extract Method;initializer_block;0.71;65-96;org.ansj.util.MyStaticValue{};66-98;org.ansj.util.MyStaticValue.init()

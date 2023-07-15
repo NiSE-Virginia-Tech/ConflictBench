@@ -1,0 +1,16 @@
+Found the following features in expression file:
+left
+base
+right
+processing: /home/ppp/Research_Projects/Merge_Conflicts/Resource/workspace/left/gradle.properties
+processing: /home/ppp/Research_Projects/Merge_Conflicts/Resource/workspace/base/gradle.properties
+processing: /home/ppp/Research_Projects/Merge_Conflicts/Resource/workspace/right/gradle.properties
+[NT -> left : Feature]
+	[NT -> gradle.properties : .properties-File]
+		[T -> gradle.properties : .properties-Content "version=8.0.0-SNAPSHOT " compose:StringConcatenation merge: Default]
+[NT -> base : Feature]
+	[NT -> gradle.properties : .properties-File]
+		[T -> gradle.properties : .properties-Content "version=7.0.0-SNAPSHOT " compose:StringConcatenation merge: Default]
+[NT -> right : Feature]
+	[NT -> gradle.properties : .properties-File]
+		[T -> gradle.properties : .properties-Content "" compose:StringConcatenation merge: Default]
